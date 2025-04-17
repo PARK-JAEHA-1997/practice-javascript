@@ -1,10 +1,12 @@
+"use strict";
+
 //사용자에게 입력을 받고 숫자인지 검증
 // Get input from the user and validate if it's a number
 function getInput(){
-    let inputNumber = prompt("0 이외의 숫자를 입력해주세요");
+    let inputNumber = prompt("Please enter a number other than 0.");
 
     if (!Number(inputNumber)){
-        alert("0 이외의 숫자를 입력해주세요");
+        alert("Please enter a number other than 0.");
         return getInput();
     } else {
         inputNumber = Number(inputNumber);
@@ -18,7 +20,7 @@ function getInput(){
 function getResult(inputNumber){
 
     function getRandom(){
-        let randomNumber = Math.floor(Math.random()*100000)+1;
+        let randomNumber = Math.floor(Math.random() * 100000) + 1;
         return randomNumber;
     }
 
@@ -33,11 +35,33 @@ function getResult(inputNumber){
                 multiplyNumber /= 2;
                 i++;
             }  else {
-                multiplyNumber = multiplyNumber*2 +1;
+                multiplyNumber = multiplyNumber * 2 + 1;
                 i++;
             }
         }   
     return [inputNumber, randomNumber, i];
+}
+
+function getMinimum(){
+    let iterationCount = getInput();
+    if(iterationCount > 1000){
+        alert("You have entered a number that is too large. Please enter a number less than or equal to 1000.");
+            return;
+        }
+    let minimum = Infinity;
+    for(let i = 0; i < iterationCount; i++){
+        let result = getResult(Math.floor(Math.random() * 100) + 1)[2];
+        console.log(result);
+        if(minimum > result){
+            minimum = result;
+        }
+    }
+    return minimum;
+}
+
+function displayMinimumResult(){
+    let result = getMinimum();
+    document.getElementById("collatz-result").innerHTML=`Minimum number of steps = ${result}`;
 }
 
 function displayResult(){
@@ -50,3 +74,4 @@ function displayResult(){
     displayResult();
 
     document.getElementById("calculate-btn").addEventListener("click",displayResult);
+    document.getElementById("find-minimum-btn").addEventListener("click",displayMinimumResult);
