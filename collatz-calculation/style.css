@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: beige;
+}
+
+#collatz-result {
+    font-size: 2em;
+    color:beige;
+    background-color: black;
+    border: 1px solid;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    background-color:beige;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: black;
+    color: beige;
+}
