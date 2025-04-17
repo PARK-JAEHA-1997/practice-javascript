@@ -15,7 +15,6 @@ function getInput(){
 
 //콜라츠 추측 횟수를 측정
 // Measure the number of steps for the Collatz conjecture
-
 function getResult(inputNumber){
 
     function getRandom(){
@@ -41,9 +40,13 @@ function getResult(inputNumber){
     return [inputNumber, randomNumber, i];
 }
 
-while(true){
+function displayResult(){
     let result = getResult(getInput());
-    alert(`User input : ${result[0]}
-Random number : ${result[1]}
-Number of steps : ${result[2]}`);
+    document.getElementById("collatz-result").innerHTML=`User input : ${result[0]}<br>
+    Random number : ${result[1]}<br>
+    Number of steps : ${result[2]}`;
 }
+
+    displayResult();
+
+    document.getElementById("calculate-btn").addEventListener("click",displayResult);
