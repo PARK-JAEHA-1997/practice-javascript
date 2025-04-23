@@ -35,7 +35,7 @@ function getResult(inputNumber){
                 multiplyNumber /= 2;
                 i++;
             }  else {
-                multiplyNumber = multiplyNumber * 2 + 1;
+                multiplyNumber = multiplyNumber * 3 + 1;
                 i++;
             }
         }   
