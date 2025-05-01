@@ -76,7 +76,6 @@ function getStar3(inputNumber) {
 
 function getStar4(inputNumber) {
   if (inputNumber % 2 === 1) {
-    console.log("실행중2");
     let result = "";
     for (let i = 0; i < inputNumber; i++) {
       if (i === 0 || i === inputNumber - 1) {
